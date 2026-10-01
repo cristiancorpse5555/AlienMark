@@ -1,0 +1,29 @@
+# Entornos virtuales
+.venv/
+env/
+venv/
+ENV/
+
+# Archivos de configuración con credenciales privadas
+config.txt
+
+# Compilación y binarios pesados (más de 100MB)
+dist/
+build/
+*.spec
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos temporales de prueba y logs
+ultimo_log.txt
+test_write.txt
+test_write.md
+*.log
+create_icon.py
+
+# IDEs
+.vscode/
+.idea/
