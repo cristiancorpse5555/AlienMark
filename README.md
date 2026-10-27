@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  🇪🇸 Español · <a href="README.en.md">🇬🇧 English</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/cristiancorpse5555/AlienMark/releases/latest"><img alt="Descargar" src="https://img.shields.io/github/v/release/cristiancorpse5555/AlienMark?label=descargar&color=2ea44f"/></a>
   <img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6"/>
   <a href="LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/licencia-MIT-blue"/></a>
