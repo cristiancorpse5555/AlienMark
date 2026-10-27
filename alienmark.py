@@ -1,6 +1,6 @@
 """
 AlienMark - Convertidor de Documentos a Markdown
-Creado por Cristian Novoa - DMT Consultora
+DMT Consultora
 
 Convierte PDF, Word, Excel, PowerPoint, imagenes, HTML y mas a formato Markdown.
 Basado en Microsoft MarkItDown.
@@ -13,8 +13,8 @@ import sys
 import os
 import time
 
-__version__ = "1.0.0"
-__author__ = "Cristian Novoa - DMT Consultora"
+__version__ = "1.1.0"
+__author__ = "DMT Consultora"
 
 BANNER = r"""
      _    _ _            __  __            _    
@@ -80,6 +80,18 @@ def select_files_dialog():
     return list(files)
 
 
+def output_path_for(input_file):
+    """Ruta del .md de salida sin pisar nunca un archivo existente
+    (ni el propio original si ya era .md): informe.md, informe (2).md, ..."""
+    base_name = os.path.splitext(input_file)[0]
+    candidate = base_name + ".md"
+    n = 2
+    while os.path.exists(candidate):
+        candidate = f"{base_name} ({n}).md"
+        n += 1
+    return candidate
+
+
 def convert_file(md, input_file, output_file):
     """Convierte un archivo a Markdown y lo guarda."""
     try:
@@ -143,8 +155,7 @@ def main():
     start_total = time.time()
 
     for i, input_file in enumerate(valid_files, 1):
-        base_name = os.path.splitext(input_file)[0]
-        output_file = base_name + ".md"
+        output_file = output_path_for(input_file)
         file_name = os.path.basename(input_file)
 
         if is_batch:

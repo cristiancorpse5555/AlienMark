@@ -1,10 +1,10 @@
 ; AlienMark Installer Script for Inno Setup
-; Creado por Cristian Novoa - DMT Consultora
+; DMT Consultora
 
 #define MyAppName "AlienMark"
-#define MyAppVersion "1.0.0"
-#define MyAppPublisher "Cristian Novoa - DMT Consultora"
-#define MyAppURL "https://github.com/microsoft/markitdown"
+#define MyAppVersion "1.1.0"
+#define MyAppPublisher "DMT Consultora"
+#define MyAppURL "https://github.com/cristiancorpse5555/AlienMark"
 #define MyAppExeName "AlienMark.exe"
 #define MySourceDir "dist\AlienMark_dir_parent\AlienMark"
 
@@ -21,7 +21,8 @@ DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 OutputDir=dist
-OutputBaseFilename=AlienMark_Setup
+OutputBaseFilename=AlienMark_Setup_v1.1.0
+LicenseFile=LICENSE
 SetupIconFile=assets\icon\AlienMark.ico
 WizardImageFile=assets\installer\WizardImage-492x942.png
 WizardSmallImageFile=assets\installer\WizardSmallImage-174x174.png
@@ -42,6 +43,8 @@ Name: "desktopicon"; Description: "Crear un acceso directo en el &Escritorio"; G
 [Files]
 Source: "{#MySourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MySourceDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "LICENSE"; DestDir: "{app}"; DestName: "LICENSE.txt"; Flags: ignoreversion
+Source: "THIRD_PARTY_NOTICES.md"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Comment: "Convertidor de Documentos a Markdown"
